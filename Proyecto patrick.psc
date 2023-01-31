@@ -10,7 +10,7 @@ Funcion opcion=presentarMenu(titulo,menu,lim)
 	Para pos=0 Hasta lim-1 Con Paso 1 Hacer
 		Escribir menu[pos]
 	Fin Para
-	Escribir "       Elija opción[1..",lim,"]" Sin Saltar
+	Escribir "       Elija opciÃ³n[1..",lim,"]" Sin Saltar
 	leer opcion
 FinFuncion
 // SubAlgoritmo mayorDosNumeros()
@@ -82,7 +82,7 @@ Funcion SumaParesyProductosmultiplosde5deunaecuenciadenumeros
     productoMulti5 <- 1
     contador <- 0
     Para contador <- 1 Hasta 5 Con Paso paso Hacer
-        Escribir "Ingresa un número: "
+        Escribir "Ingresa un nÃºmero: "
         Leer num
         Si num Mod 2 = 0 Entonces
             sumaPares <- sumaPares + num
@@ -92,8 +92,8 @@ Funcion SumaParesyProductosmultiplosde5deunaecuenciadenumeros
         FinSi
         contador <- contador + 1
     FinPara
-    Escribir "La suma de los números pares es: ", sumaPares
-    Escribir "El producto de los múltiplos de 5 es: ", productoMulti5
+    Escribir "La suma de los nÃºmeros pares es: ", sumaPares
+    Escribir "El producto de los mÃºltiplos de 5 es: ", productoMulti5
 FinFuncion
 
 
@@ -609,8 +609,8 @@ Algoritmo Proyecto
 	menuNumeros[3] = "  4)Suma Pares y Productos multiplos de 5 de una secuencia de numeros"
 	//  2,123,10,2345,0 respuesta = 10    r=trunc(2/10)=0 r = 2 mod 10 =2
 	menuNumeros[4] = "  5)Presentar cantidad de digitos de todos los numeros de una secuencia de numeros hasta 0"
-	//El almacen SomosMas tiene una promoción: a todos los trajes que tienen un
-	//precio superior a 100, se les aplicará un descuento del 10%  y a los demas
+	//El almacen SomosMas tiene una promociÃ³n: a todos los trajes que tienen un
+	//precio superior a 100, se les aplicarÃ¡ un descuento del 10%  y a los demas
 	//el 5%. presentar el valor de cada traje con su respectivo valor, descuento y pago
 	//considerando el iva del 12%. Asuma que se ingresan n trajes.
 	// n=2
@@ -826,19 +826,19 @@ Algoritmo Proyecto
 						Esperar 3 Segundos
 					"7":
 						Escribir "Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo"
-						Dadounarreglopresentarelprimeroelmedioyelultimoelementodelarreglo()
+						
 						Esperar 3 Segundos
 					"8":
 						Escribir "Dado un arreglo copiarlo en otro y presentarlo"
-						Dadounarreglocopiarloenotroypresentarlo()
+						
 						Esperar 3 Segundos
 					"9":
 						Escribir "Dado 2 arreglos copiar en un otroarreglo la suma de cada elemento de los 2 arreglos"
-						Dado2arregloscopiarenunotroarreglolasumadecadaelementodelos2arreglos()
+						
 						Esperar 3 Segundos
 					"10":
 						Escribir "Dado una serie de numeros guarda en un arreglo los factoriales"
-						Dadounaseriedenumerosguardaenunarreglolosfactoriales()
+						
 						Esperar 3 Segundos
 					"11":
 						Escribir "Regresando al Menu Principal"
