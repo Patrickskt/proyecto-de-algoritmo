@@ -77,9 +77,9 @@ Finfuncion
 
 
 Funcion SumaParesyProductosmultiplosde5deunaecuenciadenumeros
-	Definir num, sumaPares, productoMulti5, contador Como Entero
+	Definir num, sumaPares, produc, contador Como Entero
     sumaPares <- 0
-    productoMulti5 <- 1
+    produc <- 1
     contador <- 0
     Para contador <- 1 Hasta 5 Con Paso paso Hacer
         Escribir "Ingresa un número: "
@@ -88,12 +88,12 @@ Funcion SumaParesyProductosmultiplosde5deunaecuenciadenumeros
             sumaPares <- sumaPares + num
         FinSi
         Si num Mod 5 = 0 Entonces
-            productoMulti5 <- productoMulti5 * num
+            produc <- produc * num
         FinSi
         contador <- contador + 1
     FinPara
     Escribir "La suma de los números pares es: ", sumaPares
-    Escribir "El producto de los múltiplos de 5 es: ", productoMulti5
+    Escribir "El producto de los múltiplos de 5 es: ", produc
 FinFuncion
 
 
@@ -410,16 +410,16 @@ FinFuncion
 
 
 Funcion Indicarsiunapalabraespalindroma()
-	Definir nombre, inversa Como Caracter;
+	Definir nomb, inversa Como Caracter;
 	Definir l Como Entero;
-	Escribir "Ingresar un nombre";
-	Leer nombre;
+	Escribir "Ingresar una palabra";
+	Leer nomb;
 	l = Longitud(nombre);
 	Para pos <- l-1 Hasta 0 Con Paso -1 Hacer
-		inversa = inversa + Subcadena(nombre,pos,);
+		inversa = inversa + Subcadena(nomb,pos,pos);
 	Fin Para
 	Escribir inversa;
-	Si nombre = inversa Entonces
+	Si nomb = inversa Entonces
 		Escribir "La palabra es palindroma";
 	SiNo
 		Escribir "La palabra no es palindoroma";
@@ -588,6 +588,129 @@ Para pos <- cantidad-1 Hasta 0 Con Paso -1 Hacer
 Fin Para
 FinFuncion
 
+
+
+
+Funcion Dadounarreglopresentarelprimeroelmedioyelultimoelementodelarreglo()
+Definir primero, ultimo, medio Como Caracter
+escribir "Ingresa la cantidad de valores para el arreglo"
+leer cantidad
+dimension elementos(cantidad)
+para i=0 hasta cantidad-1 Hacer
+	escribir "Ingresa el valor " i+1
+	leer elementos(i)
+FinPara
+Escribir "Numeros guardados en el arreglo: "
+para x=0 Hasta cantidad-1 Hacer
+	Escribir "Posicion(" x ")" "= " elementos(x)
+FinPara
+primero=elementos(0)
+ultimo=elementos(cantidad-1)
+medio=elementos(trunc(cantidad/2))
+si cantidad mod 2=0 Entonces
+	escribir "El primer numero del arreglo es " primero
+	Escribir "La cantidad de numeros en el arreglo es PAR, por lo tanto NO HAY NUMERO EN LA MITAD de el"
+	escribir "El ultimo numero del arreglo es " ultimo
+SiNo
+	escribir "El primer numero del arreglo es " primero
+	Escribir "El numero medio del arreglo es " medio
+	escribir "El ultimo numero del arreglo es " ultimo
+fin si
+FinFuncion
+
+
+Funcion Dado2arregloscopiarenunotroarreglolasumadecadaelementodelos2arreglos()
+Definir n,num,arre1, arre2,pos,c,i Como Entero
+Escribir "Ingresa la candidad de elemetos "
+Leer n
+Dimension arre1[n] 
+Dimension arre2[n] 
+pos=0
+c=0
+Mientras c<n Hacer
+	Escribir "Ingrese numero" 
+	Leer num
+	arre1[pos]=num
+	pos=pos+1
+	c=c+1
+FinMientras
+escribir "Arreglo #1"
+para i=0 Hasta n-1 Con Paso 1
+	arre2[i]=arre1[i]
+	Escribir arre1[i]
+FinPara
+escribir "Arreglo #2"
+para i=0 Hasta n-1 Con Paso 1
+	arre2[i]=arre1[i]
+	escribir arre2[i]
+finpara
+FinFuncion
+
+
+
+
+Funcion Dado2arregloscopiarenunotroarreglolasumadecadaelementodelos2arreglos()
+Definir x,j,k,numer,numlim Como Real;
+Dimension array1[100];
+Dimension array2[100];
+Dimension sumarray[100];
+Escribir "Ingrese el limite del Arreglo";
+Leer numlim;
+Escribir "Llenar arreglo 1";
+Para x<- 0 Hasta numlim-1 Hacer
+	Escribir Sin Saltar "Arreglo [",x,"]:";
+	Leer numer;
+	array1[x]<-numer;
+FinPara
+Escribir "Llenar arreglo 2";
+Para j<- 0 Hasta numlim-1 Hacer
+	Escribir Sin Saltar "Arreglo [",j,"]:";
+	Leer numer;
+	array2[j]<-numer;
+FinPara
+Escribir "Suma de los arreglos";
+Para k<- 0 Hasta numlim-1 Hacer
+	sumarray[k]<-array1[k]+array2[k];
+	Escribir "Arreglo [",k,"]:",sumarray[k];
+FinPara
+FinFuncion
+
+
+
+
+
+
+Funcion Dadounaseriedenumerosguardaenunarreglolosfactoriales()
+Definir n,x,c, nl,cont, arreglo Como Entero;
+Definir f Como Real;
+Escribir "Ingrese la cantidad de numeros que contiene la serie:";
+Leer nl;
+Dimension arreglo(100);
+cont<-1;
+Escribir "Ingresa los numeros de la serie:";
+Mientras cont<=nl Hacer
+	Leer n;
+	Si n>=0 Entonces
+		f<-1;
+		c<-1;
+		Mientras c<=n Hacer
+			f<-f*c;
+			c<-c+1;
+		FinMientras
+	SiNo
+		Escribir "No se puede calcular el factorial de: ",n;
+	FinSi
+	arreglo(cont)<-f;
+	cont<-cont+1;
+FinMientras
+Escribir "Los factoriales de cada numero son: ";
+cont<-1;
+Mientras cont<=nl Hacer
+	Escribir "Arreglo [",cont,"]:",arreglo(cont);
+	cont<-cont+1;
+FinMientras
+
+FinFuncion
 
 
 
@@ -826,19 +949,19 @@ Algoritmo Proyecto
 						Esperar 3 Segundos
 					"7":
 						Escribir "Dado un arreglo presentar el primero,el medio y el ultimo elemento del arreglo"
-						
+						Dadounarreglopresentarelprimeroelmedioyelultimoelementodelarreglo()
 						Esperar 3 Segundos
 					"8":
 						Escribir "Dado un arreglo copiarlo en otro y presentarlo"
-						
+						Dado2arregloscopiarenunotroarreglolasumadecadaelementodelos2arreglos()
 						Esperar 3 Segundos
 					"9":
 						Escribir "Dado 2 arreglos copiar en un otroarreglo la suma de cada elemento de los 2 arreglos"
-						
+						Dado2arregloscopiarenunotroarreglolasumadecadaelementodelos2arreglos()
 						Esperar 3 Segundos
 					"10":
 						Escribir "Dado una serie de numeros guarda en un arreglo los factoriales"
-						
+						Dadounaseriedenumerosguardaenunarreglolosfactoriales()
 						Esperar 3 Segundos
 					"11":
 						Escribir "Regresando al Menu Principal"
